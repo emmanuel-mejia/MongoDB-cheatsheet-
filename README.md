@@ -100,7 +100,7 @@ db.usuarios.find(
 
 ## Consulta con Operadores
 ```js
-db.users.find(
+db.usuarios.find(
     {
         age:{
             $eq: 21
