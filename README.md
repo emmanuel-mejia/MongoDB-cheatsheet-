@@ -6,12 +6,12 @@
 mogosh
 ```
 
-## Acceso a Mongo
+## Salir de Mongo
 ```js
-mogosh
+exit
 ```
 
-## Nombre de la BD
+## Consultar BD
 ```js
 db.getName()
 ```
