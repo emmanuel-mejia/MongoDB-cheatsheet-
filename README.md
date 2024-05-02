@@ -98,6 +98,18 @@ db.usuarios.find(
     ).pretty()
 ```
 
+## Operadores de Consulta
+```js
+$gt > mayor que 
+$lt > menor que
+
+$gte >= mayor o igual que
+$lte > menor o igual que
+
+$eq = igual
+$ne != different
+```
+
 ## Consulta con Operadores
 ```js
 db.usuarios.find(
@@ -109,14 +121,12 @@ db.usuarios.find(
 ).pretty()
 ```
 
-## Operadores
+## Operadores Lógicos
 ```js
-$gt > mayor que 
-$lt > menor que
+$and - y
+$or  - o
+$not - no
+$nor - ni
 
-$gte >= mayor o igual que
-$lte > menor o igual que
-
-$eq = igual
-$ne != different
 ```
+
