@@ -149,6 +149,41 @@ $not - no
 $nor - ni
 
 ```
+## Consulta and
+```js
+db.users.find(
+    {
+        $and:
+            [
+               {
+                age:{$gt:20}
+               },
+               {
+                age:{$lt:26}
+               }
+            ]
+    }
+).pretty()
+```
+
+## Consulta or
+```js
+db.users.find(
+    {
+        $or:
+            [
+               {
+                age:{$lt:20}
+               },
+               {
+                age:{$gte:25}
+               }
+            ]
+    }
+).pretty()
+```
+
+
 
 ## Consulta and
 ```js
