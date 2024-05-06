@@ -133,15 +133,15 @@ $nor - ni
 
 ## Consulta and
 ```js
-db.users.find(
+db.usuarios.find(
     {
         $and:
             [
                {
-                age:{$gt:20}
+                edad:{$gt:20}
                },
                {
-                age:{$lt:26}
+                edad:{$lt:26}
                }
             ]
     }
@@ -150,19 +150,44 @@ db.users.find(
 
 ## Consulta or
 ```js
-db.users.find(
+db.usuaios.find(
     {
         $or:
             [
                {
-                age:{$lt:20}
+                edad:{$lt:20}
                },
                {
-                age:{$gte:25}
+                edad:{$gte:25}
                }
             ]
     }
 ).pretty()
+```
+
+## Expresión Regular (Regex)
+```js
+//Inicia
+db.usuarios.find(
+    {
+        nombre:/^nombre/
+    }
+).pretty()
+
+//Finaliza
+db.usuarios.find(
+    {
+        name:/1$/
+    }
+).pretty()
+
+//A la mitad
+db.usuarios.find(
+    {
+        name:/e2/
+    }
+).pretty()
+
 ```
 
 
