@@ -1,3 +1,5 @@
+El objetivo de este sitio, es crear una lista de comandos (en Español) para MongoDB 
+
 
 # MongoDB Cheatsheet
 ***
