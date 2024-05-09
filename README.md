@@ -188,6 +188,32 @@ db.usuarios.find(
 ).pretty()
 
 ```
+## Consulta un Array
+```js
+db.usuarios.find(
+    {
+        $or:
+            [
+               {
+                nombre:'nombre0'
+               },
+               {
+                nombre:'nombre1'
+               }
+            ]
+    }
+).pretty()
+
+db.users.find(
+    {
+        nombre:
+               {
+                $nin:['nombre0', 'nombre1']
+               }
+    }
+).pretty()
+
+```
 
 
 
