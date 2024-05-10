@@ -42,7 +42,8 @@ show collections
     nombre: 'nombre1',
     apellido: 'apellido1',
     edad: 21,
-    email: 'email1@mail.com'
+    email: 'email1@mail.com',
+    fecha_creacion: '$currentDate'
 })
 ```
 
@@ -53,25 +54,29 @@ show collections
     nombre: 'nombre2',
     apellido: 'apellido2',
     edad: 22,
-    email: 'email2@mail.com'
+    email: 'email2@mail.com',
+    fecha_creacion: '$currentDate'
     },
     {
     nombre: 'nombre3',
     apellido: 'apellido3',
     edad: 23,
     email: 'email3@mail.com'
+    fecha_creacion: '$currentDate'
     },
     {
     nombre: 'nombre4',
     apellido: 'apellido4',
     edad: 24,
-    email: 'email4@mail.com'
+    email: 'email4@mail.com',
+    fecha_creacion: '$currentDate'
     },
     {
     nombre: 'nombre5',
     apellido: 'apellido5',
     edad: 25,
-    email: 'email5@mail.com'
+    email: 'email5@mail.com',
+    fecha_creacion: '$currentDate'
     }
 ])
 ```
@@ -114,7 +119,7 @@ $ne != different
 ```js
 db.usuarios.find(
     {
-        age:{
+        edad:{
             $eq: 21
         }
     }
@@ -176,14 +181,14 @@ db.usuarios.find(
 //Finaliza
 db.usuarios.find(
     {
-        name:/1$/
+        nombre:/$1/
     }
 ).pretty()
 
 //A la mitad
 db.usuarios.find(
     {
-        name:/e2/
+        nombre:/e2/
     }
 ).pretty()
 
@@ -204,12 +209,23 @@ db.usuarios.find(
     }
 ).pretty()
 
-db.users.find(
+db.usuarios.find(
     {
         nombre:
                {
                 $nin:['nombre0', 'nombre1']
                }
+    }
+).pretty()
+
+```
+## Consulta por atributos
+```js
+db.usuarios.find(
+    {
+        edad:{
+            $exists: true
+        }
     }
 ).pretty()
 
