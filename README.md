@@ -26,14 +26,20 @@ use DB *nombreBD*
 show collections
 ```
 
-## Agregar un elemento (sin persistencia)
+## Agregar un elemento o documento (sin persistencia)
 ```js
  var usuario0 = {
     nombre: 'nombre0',
     apellido: 'apellido0',
     edad: 20,
-    email: 'email0@mail.com'
+    email: 'email0@mail.com',
+    fecha_creacion: new Date()
 }
+
+```
+## Persistir el elemento o documento anterior
+```js
+db.usuarios.insert(usuario0)
 ```
 
 ## Agregar un elemento (con persistencia)
@@ -43,7 +49,7 @@ show collections
     apellido: 'apellido1',
     edad: 21,
     email: 'email1@mail.com',
-    fecha_creacion: '$currentDate'
+    fecha_creacion: new Date()
 })
 ```
 
@@ -55,28 +61,28 @@ show collections
     apellido: 'apellido2',
     edad: 22,
     email: 'email2@mail.com',
-    fecha_creacion: '$currentDate'
+    fecha_creacion: new Date()
     },
     {
     nombre: 'nombre3',
     apellido: 'apellido3',
     edad: 23,
-    email: 'email3@mail.com'
-    fecha_creacion: '$currentDate'
+    email: 'email3@mail.com',
+    fecha_creacion: new Date()
     },
     {
     nombre: 'nombre4',
     apellido: 'apellido4',
     edad: 24,
     email: 'email4@mail.com',
-    fecha_creacion: '$currentDate'
+    fecha_creacion: new Date()
     },
     {
     nombre: 'nombre5',
     apellido: 'apellido5',
     edad: 25,
     email: 'email5@mail.com',
-    fecha_creacion: '$currentDate'
+    fecha_creacion: new Date()
     }
 ])
 ```
@@ -229,6 +235,16 @@ db.usuarios.find(
     }
 ).pretty()
 
+```
+## Actualizar el atributo de un documento con findOne
+```js
+var nombre6 = db.usuarios.findOne(
+    {nombre: 'nombre0'}
+)
+
+nombre6.fecha_creacion = new Date()
+
+db.usuarios.replaceOne(nombre6)
 ```
 
 
