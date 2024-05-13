@@ -246,6 +246,33 @@ nombre6.fecha_creacion = new Date()
 
 db.usuarios.replaceOne(nombre6)
 ```
-
+## Actualizar un documento
+```js
+db.usuarios.updateOne(
+    {
+        nombre: 'nombre0'
+    },
+    {
+        $set: {
+            edad: 21
+        }
+    } 
+)
+```
+## Actualizar multiples documentos
+```js
+db.usuarios.updateMany(
+    {
+        edad: {
+            $exists: true
+        }
+    },
+    {
+        $set: {
+            edad: 22
+        }
+    } 
+)
+```
 
 
