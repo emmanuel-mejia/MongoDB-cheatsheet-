@@ -274,5 +274,16 @@ db.usuarios.updateMany(
     } 
 )
 ```
+## Eliminar atributos
+```js
+db.usuarios.updateOne(
+    {
+        nombre: 'nombre5'
+    },
+    {
+        $unset: {'fecha_creacion': true}
+    } 
+)
+```
 
 
