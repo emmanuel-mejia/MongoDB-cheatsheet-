@@ -285,5 +285,18 @@ db.usuarios.updateOne(
     } 
 )
 ```
+## Incrementar el valor de un atributo
+```js
+db.usuarios.updateOne(
+    {
+        nombre: 'nombre5'
+    },
+    {
+        $inc: {
+            edad: 1
+        }
+    } 
+)
+```
 
 
