@@ -298,5 +298,20 @@ db.usuarios.updateOne(
     } 
 )
 ```
-
+## Actualizar un atributo exista o no
+```js
+db.usuarios.updateOne(
+    {
+        nombre: 'nombre6'
+    },
+    {
+        $set: {
+            edad: 25
+        }
+    }, 
+    {
+        upsert: true
+    }
+)
+```
 
