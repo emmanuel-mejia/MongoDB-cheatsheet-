@@ -314,4 +314,10 @@ db.usuarios.updateOne(
     }
 )
 ```
+## Borrar documentos
+db.usuarios.remove(
+    {
+        nombre: 'nombre6'
+    }
+)
 
