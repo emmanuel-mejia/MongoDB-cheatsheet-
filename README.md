@@ -322,4 +322,7 @@ db.usuarios.remove(
     }
 )
 ```
-
+## Borrar todo
+```js
+db.usuarios.remove({})
+```
