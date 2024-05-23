@@ -326,8 +326,14 @@ db.usuarios.remove(
 ```js
 db.usuarios.remove({})
 ```
-```
+```js
 ## Borrar la BD
 db.dropDatabase()
 ```
+```js
+## Borrar una colección
+db.usuarios.drop()
+```
+
+
 
