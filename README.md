@@ -334,6 +334,11 @@ db.dropDatabase()
 ## Borrar una colección
 db.usuarios.drop()
 ```
+```js
+## Contar el Número de Documentos dentro la colección
+db.usuarios.countDocuments()
+```
+
 
 
 
