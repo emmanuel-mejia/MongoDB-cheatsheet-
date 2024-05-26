@@ -108,7 +108,10 @@ db.usuarios.find(
     {edad:25}
     ).pretty()
 ```
-
+```js
+## Saltar y Limitar los elementos de la consulta
+db.usuarios.find().skip(2).limit(3)
+```
 ## Operadores de Consulta
 ```js
 $gt > mayor que 
@@ -338,6 +341,7 @@ db.usuarios.drop()
 ## Contar el Número de Documentos dentro la colección
 db.usuarios.countDocuments()
 ```
+
 
 
 
