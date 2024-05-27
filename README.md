@@ -329,16 +329,16 @@ db.usuarios.remove(
 ```js
 db.usuarios.remove({})
 ```
-```js
 ## Borrar la BD
+```js
 db.dropDatabase()
 ```
-```js
 ## Borrar una colección
+```js
 db.usuarios.drop()
 ```
-```js
 ## Contar el Número de Documentos dentro la colección
+```js
 db.usuarios.countDocuments()
 ```
 
