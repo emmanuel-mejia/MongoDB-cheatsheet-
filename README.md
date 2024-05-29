@@ -108,8 +108,8 @@ db.usuarios.find(
     {edad:25}
     ).pretty()
 ```
-```js
 ## Saltar y Limitar los elementos de la consulta
+```js
 db.usuarios.find().skip(2).limit(3)
 ```
 ## Operadores de Consulta
