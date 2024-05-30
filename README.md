@@ -112,6 +112,12 @@ db.usuarios.find(
 ```js
 db.usuarios.find().skip(2).limit(3)
 ```
+## Ordenar por nombre en forma Descendente
+```js
+db.usuarios.find().sort({
+    name: -1
+})
+```
 ## Operadores de Consulta
 ```js
 $gt > mayor que 
