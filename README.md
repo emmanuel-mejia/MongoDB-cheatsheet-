@@ -347,7 +347,21 @@ db.usuarios.drop()
 ```js
 db.usuarios.countDocuments()
 ```
-
+## Encuentra y Modifica un documento con incremento
+```js
+db.usuarios.findAndModify(
+    {
+        query:{
+            nombre: 'nombre6'
+        },
+        update: {
+            $inc:{
+                edad: 1
+            }
+        }
+    }
+)
+```
 
 
 
