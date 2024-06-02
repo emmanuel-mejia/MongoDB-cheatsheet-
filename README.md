@@ -362,7 +362,17 @@ db.usuarios.findAndModify(
     }
 )
 ```
-
+## Renombrar atributos de la colección
+```js
+db.usuarios.updateMany(
+    {},
+    {
+        $rename: {
+            fecha_creacion: 'fec_creacion'
+        }
+    }
+)
+```
 
 
 
