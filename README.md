@@ -283,6 +283,26 @@ db.usuarios.updateMany(
     } 
 )
 ```
+## Actualizar un atributo exista o no
+```js
+db.usuarios.updateOne(
+    {
+        nombre: 'nombre6'
+    },
+    {
+        $set: {
+            edad: 25
+        }
+    }, 
+    {
+        upsert: true
+    }
+)
+```
+## Actualizar con una lista
+```js
+db.usuarios.updateOne({nombre: 'nombre6'},{$set: {pasatiempos: ['Leer','Correr','Cocinar']}})
+```
 ## Eliminar atributos
 ```js
 db.usuarios.updateOne(
@@ -305,22 +325,6 @@ db.usuarios.updateOne(
             edad: 1
         }
     } 
-)
-```
-## Actualizar un atributo exista o no
-```js
-db.usuarios.updateOne(
-    {
-        nombre: 'nombre6'
-    },
-    {
-        $set: {
-            edad: 25
-        }
-    }, 
-    {
-        upsert: true
-    }
 )
 ```
 ## Borrar documentos
