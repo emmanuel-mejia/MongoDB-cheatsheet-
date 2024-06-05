@@ -299,10 +299,6 @@ db.usuarios.updateOne(
     }
 )
 ```
-## Actualizar con una lista
-```js
-db.usuarios.updateOne({nombre: 'nombre6'},{$set: {pasatiempos: ['Leer','Correr','Cocinar']}})
-```
 ## Eliminar atributos
 ```js
 db.usuarios.updateOne(
@@ -377,6 +373,21 @@ db.usuarios.updateMany(
     }
 )
 ```
+## Actualizar con una lista
+```js
+db.usuarios.updateOne({nombre: 'nombre6'},{$set: {pasatiempos: ['Leer','Correr','Cocinar']}})
+```
+## Buscar un elemento dentro de la lista
+```js
+db.usuarios.findOne(
+    {
+        pasatiempos: {
+            $eq: ['Leer','Pasear'] //El orden es importante
+        }
+    }
+)
+```
+
 
 
 
