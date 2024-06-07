@@ -387,6 +387,16 @@ db.usuarios.findOne(
     }
 )
 ```
+## Buscar un elemento dentro de la lista, el operador all se usa como and
+```js
+db.usuarios.find(
+    {
+        pasatiempos: {
+            $all: ['Aprender','Cocinar']
+        }
+    }
+).pretty()
+```
 
 
 
