@@ -397,8 +397,10 @@ db.usuarios.find(
     }
 ).pretty()
 ```
-## 
+## Multiples condiciones en una lista and, or
 ```js
+db.usuarios.find({$and: [{pasatiempos: 'Leer'},{pasatiempos: 'Cocinas'}]})
+db.usuarios.find({$or: [{pasatiempos: 'Correr'},{pasatiempos: 'Aprender un idioma'}]})
 ```
 
 
