@@ -409,5 +409,11 @@ db.usuarios.find(
         [{pasatiempos: 'Correr'},{pasatiempos: 'Aprender un idioma'}]
     })
 ```
-
+## Insertar elementos en una lista
+```js
+db.usuarios.updateOne(
+    {nombre:'nombre0'},
+    {$push:{pasatiempos:'Escribir'}}
+)
+```
 
