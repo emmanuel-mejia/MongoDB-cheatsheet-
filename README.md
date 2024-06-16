@@ -416,4 +416,16 @@ db.usuarios.updateOne(
     {$push:{pasatiempos:'Escribir'}}
 )
 ```
+## Insertar varios elementos en una lista
+```js
+db.usuarios.updateOne(
+    {nombre:'nombre1'},
+    {$push:{
+        pasatiempos:{
+            $each:['Programar','Cine']
+        }}
+    }
+)
+```
+
 
