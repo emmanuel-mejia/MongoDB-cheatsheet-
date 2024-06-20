@@ -427,8 +427,14 @@ db.usuarios.updateOne(
     }
 )
 ```
-## 
+## Insertar elementos en la posición 1
 ```js
+db.usuarios.updateOne
+({nombre6:'nombre6'},
+    {$push:{pasatiempors:
+        {$each:['Viajar','Sports'],$position:1,}
+    }
+})
 ```
 
 
