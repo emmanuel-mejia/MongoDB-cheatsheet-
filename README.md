@@ -471,5 +471,16 @@ db.usuarios.updateOne
     }
 })
 ```
+## Ordernar elementos de forma descendente
+```js
+db.usuarios.updateOne(
+    {nombre:'nombre5'},
+    {$push:{
+        diasPasamiento:{
+            $each: [5,4],$sort:-1
+        }
+    }
+})
+```
 
 
