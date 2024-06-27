@@ -482,7 +482,11 @@ db.usuarios.updateOne(
     }
 })
 ```
-##  
+##  Eliminar valores en la lista de elementos
 ```js
+db.usuarios.updateMany(
+    {pasatiempos:{ $exists:true}},
+    {$pull:{pasatiempos:'Escribir'}}
+)
 ```
 
