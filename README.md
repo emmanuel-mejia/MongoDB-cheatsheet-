@@ -489,4 +489,8 @@ db.usuarios.updateMany(
     {$pull:{pasatiempos:'Escribir'}}
 )
 ```
+##  
+```js
+```
+
 
