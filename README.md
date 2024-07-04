@@ -489,8 +489,12 @@ db.usuarios.updateMany(
     {$pull:{pasatiempos:'Escribir'}}
 )
 ```
-##  
+##  Actualizar un índice
 ```js
+db.usuarios.updateMany(
+    {diasPasamiento:
+        { $exists:true}},{$set:{'diasPasamiento.1':0}}
+)
 ```
 ##  
 ```js
