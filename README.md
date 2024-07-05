@@ -496,7 +496,11 @@ db.usuarios.updateMany(
         { $exists:true}},{$set:{'diasPasamiento.1':0}}
 )
 ```
-##  
+##  Obtener indices del 0 al 3
 ```js
+db.usuarios.find(
+    {nombre:{$in:['nombre0','nombre5']}},
+    {_id:false,nombre:true,pasatiempos:{$slice:[0,3]}}
+).pretty()
 ```
 
