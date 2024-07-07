@@ -503,4 +503,6 @@ db.usuarios.find(
     {_id:false,nombre:true,pasatiempos:{$slice:[0,3]}}
 ).pretty()
 ```
-
+## 
+```js
+```
