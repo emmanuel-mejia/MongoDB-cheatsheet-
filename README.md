@@ -503,6 +503,11 @@ db.usuarios.find(
     {_id:false,nombre:true,pasatiempos:{$slice:[0,3]}}
 ).pretty()
 ```
-## 
+## Buscar elementos con almenos 2 pasatiempos - gt greate than
 ```js
+db.usuarios.find(
+    {pasatiempos:{
+        $size:{$gt:2}
+    }}
+).pretty()
 ```
