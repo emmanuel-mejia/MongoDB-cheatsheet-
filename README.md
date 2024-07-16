@@ -511,8 +511,12 @@ db.usuarios.find(
     }}
 ).pretty()
 ```
-## 
+## Salvar Documentos dentro de documentos
 ```js
+db.usuarios.updateOne(
+    {nombre:'nombre0'},
+    {$set:{direccion:{estado: 'Baja California', ciudad:'Los Cabos',  calle: 'Park Av', CP:05890}}
+})
 ```
 ## 
 ```js
