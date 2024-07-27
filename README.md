@@ -518,8 +518,11 @@ db.usuarios.updateOne(
     {$set:{direccion:{estado: 'Baja California', ciudad:'Los Cabos',  calle: 'Park Av', CP:05890}}
 })
 ```
-## 
+## Obtener todos los usuarios con una dirección
 ```js
+db.usuarios.find(
+    {direccion:{$exists:true}}
+)
 ```
 ## 
 ```js
