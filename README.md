@@ -524,10 +524,12 @@ db.usuarios.find(
     {direccion:{$exists:true}}
 )
 ```
-## 
+## Actualizar 
 ```js
-
-
+db.usuarios.updateOne(
+    {nombre:'nombre1'},
+    {$set:{'direccion.number':12}}
+)
 ```
 ## 
 ```js
