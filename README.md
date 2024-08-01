@@ -538,8 +538,12 @@ db.usuarios.updateOne(
     {$push:{'direccion.references':{$each:['McDonald\'s']}}
 })
 ```
-## 
+## Borrar documentos
 ```js
+db.usuarios.updateMany(
+    {pasatiempos: {$exists: true}},
+    {$unset:{pasatiempos: true}}
+)
 ```
 ## 
 ```js
