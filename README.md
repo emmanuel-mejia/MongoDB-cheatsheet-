@@ -531,8 +531,12 @@ db.usuarios.updateOne(
     {$set:{'direccion.number':12}}
 )
 ```
-## 
+## Caracter de Escape
 ```js
+db.usuarios.updateOne(
+    {nombre:'nombre1'},
+    {$push:{'direccion.references':{$each:['McDonald\'s']}}
+})
 ```
 ## 
 ```js
