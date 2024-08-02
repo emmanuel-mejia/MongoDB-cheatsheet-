@@ -545,6 +545,20 @@ db.usuarios.updateMany(
     {$unset:{pasatiempos: true}}
 )
 ```
-## 
+## Recrear documentos
 ```js
+db.usuarios.updateOne(
+    {
+        nombre: 'nombre2'
+    },
+    {$set: 
+        {
+            hobbies: 
+            [{title:'Leer',actual:true,horas:4},
+            {title:'Correr',actual:true,horas:5},
+            {title:'Cine',actual:false,horas:0},
+            {title:'Cocinar',actual:true,horas:6}]
+        }
+    }
+)
 ```
