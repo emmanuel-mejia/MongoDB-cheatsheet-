@@ -562,8 +562,11 @@ db.usuarios.updateOne(
     }
 )
 ```
-## 
+## Coincidencias usando $elementmatch
 ```js
+db.usuarios.find(
+    {pasatiempos:{$elemMatch:{horas:{$gt: 2}}}}
+).pretty()
 ```
 ## 
 ```js
