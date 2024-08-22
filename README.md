@@ -568,8 +568,12 @@ db.usuarios.find(
     {pasatiempos:{$elemMatch:{horas:{$gt: 2}}}}
 ).pretty()
 ```
-## 
+## Proyecciones - Obtener el titulo y sus pasatiempos
 ```js
+db.usuarios.find(
+    {pasatiempos:{$exists:true}},
+    {_id:false,nombre:true,'pasatiempos.title':true}
+).pretty()
 ```
 ## 
 ```js
