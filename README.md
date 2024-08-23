@@ -575,8 +575,13 @@ db.usuarios.find(
     {_id:false,nombre:true,'pasatiempos.title':true}
 ).pretty()
 ```
-## 
+## Actualizar un elemento conociendo el índice
 ```js
+db.usuarios.updateOne(
+    {nombre:'nombre7'},
+    {$set:{'pasatiempos.0.hours':7,'pasatiempos.0.performing':true}}
+)
+
 ```
 ## 
 ```js
