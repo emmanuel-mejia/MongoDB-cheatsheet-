@@ -583,8 +583,12 @@ db.usuarios.updateOne(
 )
 
 ```
-## .
+## Actualizar un documento dentro de una lista sin conocer el índice
 ```js
+db.usuarios.updateOne(
+    {nombre:'nombre3','pasatiempos.title':'Leer'},
+    {$set:{'pasatiempos.$.hours':8,'pasatiempos.$.performing':true}}
+)
 ```
 ## 
 ```js
