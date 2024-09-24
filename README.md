@@ -579,7 +579,7 @@ db.usuarios.find(
 ```js
 db.usuarios.updateOne(
     {nombre:'nombre7'},
-    {$set:{'pasatiempos.0.hours':7,'pasatiempos.0.performing':true}}
+    {$set:{'pasatiempos.0.hours':7,'pasatiempos.0.tiempo':true}}
 )
 
 ```
@@ -587,11 +587,15 @@ db.usuarios.updateOne(
 ```js
 db.usuarios.updateOne(
     {nombre:'nombre3','pasatiempos.title':'Leer'},
-    {$set:{'pasatiempos.$.hours':8,'pasatiempos.$.performing':true}}
+    {$set:{'pasatiempos.$.hours':8,'pasatiempos.$.tiempo':true}}
 )
 ```
-## 
+## Actualizar un documento dentro de una lista sin conocer el índice con nuevos atributos
 ```js
+db.usuarios.updateOne(
+    {nombre:'nombre8','pasatiempos.titulo':'Cocinar'},
+    {$set:{'pasatiempos.$.horas':7,'pasatiempos.$.tiempo':true,'pasatiempos.$.recomendable':false}}
+)
 ```
 ## 
 ```js
