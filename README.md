@@ -597,8 +597,11 @@ db.usuarios.updateOne(
     {$set:{'pasatiempos.$.horas':7,'pasatiempos.$.tiempo':true,'pasatiempos.$.recomendable':false}}
 )
 ```
-## 
+## Método de Agregación - Usuarios mayores a 25
 ```js
+db.usuarios.find(
+  {edad:{$gt:25}}
+).pretty()
 ```
 ## 
 ```js
