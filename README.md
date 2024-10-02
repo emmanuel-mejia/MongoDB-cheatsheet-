@@ -597,20 +597,25 @@ db.usuarios.updateOne(
     {$set:{'pasatiempos.$.horas':7,'pasatiempos.$.tiempo':true,'pasatiempos.$.recomendable':false}}
 )
 ```
-## Métodoa de Agregación vs Usuarios mayores a 25 sin agregación
+## Métodos de Agregación vs Usuarios mayores a 25 sin agregación
 ```js
 db.usuarios.find(
   {edad:{$gt:25}}
 ).pretty()
 ```
-##  Métodoa de Agregación, Usuarios mayores a 25 con agregación
+##  Métodos de Agregación, Usuarios mayores a 25 con agregación
 ```js
 db.usuarios.aggregate(
   [{$match:{edad:{$gt:25}}}]
 ).pretty()
 ```
-## 
+## El input de una tarea es el output de la tarea PerformanceNavigationTiming, es decir los universos se reduden en cada ejecución
 ```js
+db.usuarios.aggregate(
+  [{$match:{edad:{$gt:25}}},
+    {$match:{pasatiempos:{$exists:true}}},
+    {$match:{apellido:'apellido0'}}]
+  ).pretty()
 ```
 ## 
 ```js
