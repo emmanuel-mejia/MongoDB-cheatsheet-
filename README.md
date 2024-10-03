@@ -609,7 +609,7 @@ db.usuarios.aggregate(
   [{$match:{edad:{$gt:25}}}]
 ).pretty()
 ```
-## El input de una tarea es el output de la tarea PerformanceNavigationTiming, es decir los universos se reduden en cada ejecución
+## El input de una tarea es el output de la tarea siguiente
 ```js
 db.usuarios.aggregate(
   [{$match:{edad:{$gt:25}}},
@@ -617,8 +617,13 @@ db.usuarios.aggregate(
     {$match:{apellido:'apellido0'}}]
   ).pretty()
 ```
-## 
+## Uso de project para definir los atributos del documento
 ```js
+db.usuarios.aggregate([
+    {$match:{edad:{$gt:25}}},
+    {$match:{pasatiempos:{$exists:true}}},
+    {$project:{_id:false, nombre:true, pasatiempos:true}}
+  ]).pretty()
 ```
 ## 
 ```js
