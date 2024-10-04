@@ -625,6 +625,12 @@ db.usuarios.aggregate([
     {$project:{_id:false, nombre:true, pasatiempos:true}}
   ]).pretty()
 ```
-## 
+## Uso de slice para obtener x numero de elementos de una lista en un documento
 ```js
+db.usuarios.aggregate(
+  [{$match:{edad:{$gt:20}}},
+    {$match:{pasatiempos:{$exists:true}}},
+    {$project:{_id:false, nombre:true, pasatiempos:true}},
+    {$project:{name:true, primerpasatiempo:{$slice:['$pasatiempos',2]}}}]
+  ).pretty()
 ```
