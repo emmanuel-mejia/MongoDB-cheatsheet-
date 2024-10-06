@@ -634,3 +634,6 @@ db.usuarios.aggregate(
     {$project:{name:true, primerpasatiempo:{$slice:['$pasatiempos',2]}}}]
   ).pretty()
 ```
+## 
+```js
+```
