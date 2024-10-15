@@ -634,8 +634,15 @@ db.usuarios.aggregate(
     {$project:{name:true, primerpasatiempo:{$slice:['$pasatiempos',2]}}}]
   ).pretty()
 ```
-## 
+## Uso de $arrayElemAt para obtener elementos de una lista en un documento indicando la posición en el array
 ```js
+db.usuarios.aggregate(
+  [{$match:{edad:{$gt:20}}},
+    {$match:{pasatiempos:{$exists:true}}},
+    {$project:{_id:false, name:true, pasatiempos:true}},
+    {$project:{nombre:true, primerpasatiempos:{$slice:['$pasatiempos',2]}}},
+    {$project:{nombre:true, pasatiempos:{$arrayElemAt:['$primerpasatiempos',0]}}}
+  ]).pretty()
 ```
 ## 
 ```js
