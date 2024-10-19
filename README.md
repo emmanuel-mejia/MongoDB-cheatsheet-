@@ -644,8 +644,16 @@ db.usuarios.aggregate(
     {$project:{nombre:true, pasatiempos:{$arrayElemAt:['$primerpasatiempos',0]}}}
   ]).pretty()
 ```
-## 
+## Uso de $addFields para agregar un nuveo campo con su valor
 ```js
+db.usuarios.aggregate(
+  [{$match:{edad:{$gt:20}}},
+    {$match:{pasatiempos:{$exists:true}}},
+    {$project:{_id:false, nombre:true, pasatiempos:true}},
+    {$project:{nombre:true, primerpasatiempos:{$slice:['$pasatiempos',2]}}},
+    {$project:{nombre:true, pasatiempos:{$arrayElemAt:['$primerpasatiempos',0]}}},
+    {$addFields:{FechaaCtual:new Date()}}]
+).pretty()
 ```
 ## 
 ```js
