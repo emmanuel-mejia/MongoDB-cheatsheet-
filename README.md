@@ -655,8 +655,12 @@ db.usuarios.aggregate(
     {$addFields:{FechaaCtual:new Date()}}]
 ).pretty()
 ```
-## 
+## Uso de set para adicionar campos con calculos específicos 
 ```js
+db.usuarios.aggregate(
+  {$match:{horas:{$exists:true}}}
+)
+
 ```
 ## 
 ```js
