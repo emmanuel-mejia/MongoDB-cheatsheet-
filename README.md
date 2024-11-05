@@ -644,7 +644,7 @@ db.usuarios.aggregate(
     {$project:{nombre:true, pasatiempos:{$arrayElemAt:['$primerpasatiempos',0]}}}
   ]).pretty()
 ```
-## Uso de $addFields para agregar un nuveo campo con su valor
+## Uso de $addFields para agregar un nuevo campo con su valor
 ```js
 db.usuarios.aggregate(
   [{$match:{edad:{$gt:20}}},
@@ -662,8 +662,13 @@ db.usuarios.aggregate(
 )
 
 ```
-## 
+## Concatenar atributos
 ```js
+db.usuarios.aggregate(
+  [{$match:{$and:[{nombre:{$exists:true}},{apellido:{$exists:true}}]}},
+   {$project:{_id:false,nombre:true,apellido:true}},
+   {$project:{nombreCompleto:{$concat:['$nombre', ' ','$apellido']}}}]
+).pretty()
 ```
 ## 
 ```js
