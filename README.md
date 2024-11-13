@@ -670,8 +670,15 @@ db.usuarios.aggregate(
    {$project:{nombreCompleto:{$concat:['$nombre', ' ','$apellido']}}}]
 ).pretty()
 ```
-## 
+## Nueva colección - uso de Group by
 ```js
+  db.lego.insertMany([
+    { typec: "Novela", color: "Azul", precio: 14.99 },
+    { typec: "No ficcion", color: "Verde", precio: 19.99 },
+    { typec: "Misterio", color: "Negro", precio: 12.50 },
+    { typec: "Fantasia", color: "Rojo", precio: 17.99 },
+    { typec: "Ciencia Ficcion", color: "Morado", precio: 23 }
+  ])
 ```
 ## 
 ```js
